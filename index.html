@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+<div class="card">
+    <div>
+        <header>
+            <h1>Password Generator</h1>
+        </header>
+    </div>
+    <div>
+        <textarea
+        readonly
+        id="password"
+        placeholder="Your Secure Password"
+        aria-label="Generated Password"
+      ></textarea>
+    </div>
+    <div class="checklist">
+        <form>
+            <input type="checkbox" id="uppercaseBox" name="uppercaseBox" value="">
+            <label for="uppercaseBox">Uppercase Letters? A-Z</label>
+
+            <input type="checkbox" id="lowercaseBox" name="lowercaseBox" value="">
+            <label for="lowercaseBox">Lowercase Letters? a-z</label>
+
+            <!--TODO: add a modal for special characters list to display what theyre checkBoxing THEN add to all boxes-->
+            <input type="checkbox" id="specialLetterBox" name="specialLetterBox" value="">
+            <label for="specialLetterBox">Special Characters? </label>
+
+            <input type="checkbox" id="numbersBox" name="numbersBox" value="">
+            <label for="numbersBox">Numbers? 0-9 </label>
+        </form>
+        
+    </div>
+    <div >
+        <button id="generate-password-btn" class="btn">Generate Password</button>
+    </div>
+</div>
+</body>
+</html>
