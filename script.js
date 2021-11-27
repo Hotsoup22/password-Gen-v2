@@ -18,6 +18,7 @@ const generatePasswordBtn = document.querySelector("#generatePasswordBtn")
 generatePasswordBtn.addEventListener("click", generatePassword)
 
 function generatePassword() { 
+  console.clear();
   passwordTextArea.textContent= ""
   password = [];
   checkUppercaseBox();
