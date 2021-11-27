@@ -8,7 +8,8 @@ const lowercaseBox = document.querySelector("#lowercaseBox")
 const specialLetterBox = document.querySelector("#specialLetterBox")
 const numbersBox = document.querySelector("#numbersBox")
 const passwordLength = document.querySelector("#passwordLength")
-
+//can it fit in a function? scope problems?
+const passwordTextArea = document.querySelector("#passwordTextArea")
 
 
 
@@ -17,16 +18,21 @@ const generatePasswordBtn = document.querySelector("#generatePasswordBtn")
 generatePasswordBtn.addEventListener("click", generatePassword)
 
 function generatePassword() { 
+  passwordTextArea.textContent= ""
+  password = [];
   checkUppercaseBox();
+  DisplayPassword();
 
  
-  console.log("end of gen-pass function");
+  console.log("end of gen-pass function", "password: ",password);
 }
 
 function randomizePassword(myArray){
   var rand = Math.floor(Math.random()*myArray.length);
-  var rValue = myArray[rand]
- return console.log(rValue)
+  var randomValue = myArray[rand]
+  //add to  array call passowrd
+  password.push(randomValue)
+ return console.log("randomizePassword function: ",randomValue)
 }
 
 //then it will check which boxes are checked 
@@ -43,9 +49,11 @@ function checkUppercaseBox() {
 }
 
 function consoleLogBoxCheck (isChecked){
-
   return console.log("UpperCase value: ",`${isChecked}`)
 }
 //then password will apear in textBox
-
+function DisplayPassword(){
+  passwordTextArea.textContent = password
+  console.log("password: ",password)
+}
 //then display values user chose 
