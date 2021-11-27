@@ -28,33 +28,33 @@
             <br>
             <div class="checklist">
                 <form>
-                    <ul>
-                        <li >
-                            <input type="checkbox" id="uppercaseBox" name="uppercaseBox" value="" class="form-label" />
+                    <ul  class="no-bullets">
+                        <li>
+                            <input type="checkbox" id="uppercaseBox" name="uppercaseBox" value="" class="form-check-input" />
                             <label class="form-label" for="uppercaseBox">Uppercase Letters? A-Z</label>
                         </li>
                         <br>
                         <li >
-                            <input type="checkbox" id="lowercaseBox" name="lowercaseBox" value="" class="form-label" />
+                            <input type="checkbox" id="lowercaseBox" name="lowercaseBox" value="" class="form-check-input" />
                             <label class="form-label" for="lowercaseBox">Lowercase Letters? a-z</label>
                         </li>
                         <br>
                         <li >
                             <!--TODO: add a modal for special characters list to display what theyre checkBoxing THEN add to all boxes-->
                             <input type="checkbox" id="specialLetterBox" name="specialLetterBox" value=""
-                                class="form-label" />
+                                class="form-check-input" />
                             <label class="form-label" for="specialLetterBox">Special Characters? </label>
                         </li>
                         <br>
                         <li >
-                            <input type="checkbox" id="numbersBox" name="numbersBox" value="" class="form-label" />
+                            <input type="checkbox" id="numbersBox" name="numbersBox" value="" class=" form-check-input" />
                             <label class="form-label" for="numbersBox">Numbers? 0-9 </label>
                         </li>
                     </ul>
                     <div class="password-lengthDiv  mb-3">
-                    <input type="number" id="password-length" name="password-length" value="" min="0" max="256"
+                    <input type="number" id="passwordLength" name="passwordLength" value="" min="0" max="256"
                         class="form-label" />
-                    <label class="form-label" for="password-length">Desired Password Length? </label>
+                    <label class="form-label" for="passwordLength">Desired Password Length? </label>
                 </div>
             </div>
             </form>
