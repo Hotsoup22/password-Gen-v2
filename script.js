@@ -4,7 +4,7 @@ const lowerCaseIndex = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n",
 const specialLettersIndex = ["$^?:,(){}[]~-_.@%+\'!#"]
 const numberIndex = ["1234567890"]
 let password = [];
-const lowercaseBox = document.querySelector("#lowercaseBox")
+
 const specialLetterBox = document.querySelector("#specialLetterBox")
 const numbersBox = document.querySelector("#numbersBox")
 const passwordLength = document.querySelector("#passwordLength")
@@ -22,6 +22,7 @@ function generatePassword() {
   passwordTextArea.textContent= ""
   password = [];
   checkUppercaseBox();
+  checkLowercaseBox();
   DisplayPassword();
 
  
@@ -48,9 +49,23 @@ function checkUppercaseBox() {
   return randomizePassword(upperCaseIndex) , consoleLogBoxCheck(isCheckedUppercaseBox );
   }
 }
+function checkLowercaseBox() {
+  const lowercaseBox = document.querySelector("#lowercaseBox")
+  let isCheckedLowercaseBox = false;
+  if (!lowercaseBox.checked === true) {
+    isCheckedLowercaseBox =false; 
+      consoleLogBoxCheck(isCheckedLowercaseBox);
+  } else if(lowercaseBox.checked === true) {
+    isCheckedLowercaseBox = true;
+   randomizePassword(lowerCaseIndex) 
+    consoleLogBoxCheck(isCheckedLowercaseBox);
+  }
+}
 
-function consoleLogBoxCheck (isChecked){
-  return console.log("UpperCase value: ",`${isChecked}`)
+function consoleLogBoxCheck (isCheckedUppercaseBox, isCheckedLowercaseBox){
+ 
+   console.log("UpperCase value: ",`${isCheckedUppercaseBox}`)
+   console.log("LowerCase value: ",`${isCheckedLowercaseBox}`)
 }
 //then password will apear in textBox
 function DisplayPassword(){
