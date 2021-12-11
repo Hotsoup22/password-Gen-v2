@@ -1,9 +1,14 @@
 
-const upperCaseIndex = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-const lowerCaseIndex = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-const specialLettersIndex = ["$","^","?",":",",","(",")","{","}","[","]","~","-","_",".","@","%","+","\",","!","#",",","'"]
-const numberIndex = ["1","2","3","4","5","6","7","8","9","0"]
-let password = [];
+// const upperCaseIndex = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ']
+// const lowerCaseIndex = ['abcdefghijklmnopqrstuvwxyz']
+// const specialLettersIndex = ['/<>$^?:,!(){}[]~-_.@%+#,\'\\']
+// const numberIndex = ['1234567890']
+const upperCaseIndex = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+const lowerCaseIndex = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+const specialLettersIndex =  ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '.', '~', '|', '<', '>', '=', '-', '_', '/', ':', ';', '?', '[', ']', '{', '}', '~'];
+const numberIndex = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+let password = []
+let randomizerSelection  = [];
 
 
 
@@ -21,23 +26,20 @@ function generatePassword() {
   console.clear();
   passwordTextArea.textContent= ""
   password = [];
+  randomizerSelection = [];
   checkUppercaseBox();
   checkLowercaseBox();
   checkSpecialLetterBox();
   checkNumbersBox();
+  getPasswordLength();
+  randomizePassword()
+  
   DisplayPassword();
 
  
   console.log("end of gen-pass function", "password: ",password);
 }
 
-function randomizePassword(myArray){
-  var rand = Math.floor(Math.random()*myArray.length);
-  var randomValue = myArray[rand]
-  //add to  array call passowrd
-  password.push(randomValue)
- return console.log("randomizePassword function: ",randomValue)
-}
 
 //then it will check which boxes are checked 
 function checkUppercaseBox() {
@@ -46,9 +48,10 @@ function checkUppercaseBox() {
   if (!uppercaseBox.checked === true) {
     isCheckedUppercaseBox =false; 
     return  consoleLogBoxCheck(isCheckedUppercaseBox," :Uppercase");
-  } else if(uppercaseBox.checked === true) {
+  } if(uppercaseBox.checked === true) {
     isCheckedUppercaseBox = true;
-  return randomizePassword(upperCaseIndex) , consoleLogBoxCheck(isCheckedUppercaseBox, " :Uppercase" );
+    randomizerSelection.push(...upperCaseIndex)
+    consoleLogBoxCheck(isCheckedUppercaseBox, " :Uppercase" );
   }
 }
 function checkLowercaseBox() {
@@ -56,10 +59,10 @@ function checkLowercaseBox() {
   let isCheckedLowercaseBox = false;
   if (!lowercaseBox.checked === true) {
     isCheckedLowercaseBox =false; 
-      consoleLogBoxCheck(isCheckedLowercaseBox, " :Lowercase");
-  } else if(lowercaseBox.checked === true) {
+     return consoleLogBoxCheck(isCheckedLowercaseBox, " :Lowercase");
+  } if(lowercaseBox.checked === true) {
     isCheckedLowercaseBox = true;
-   randomizePassword(lowerCaseIndex) 
+    randomizerSelection.push(...lowerCaseIndex)
     consoleLogBoxCheck(isCheckedLowercaseBox, " :Lowercase");
   }
 }
@@ -68,10 +71,11 @@ function checkSpecialLetterBox() {
   let isCheckedSpecialLetterBox = false;
   if (!specialLetterBox.checked === true) {
     isCheckedSpecialLetterBox =false; 
-      consoleLogBoxCheck(isCheckedSpecialLetterBox, " :SpecialLetters");
-  } else if(specialLetterBox.checked === true) {
+      return consoleLogBoxCheck(isCheckedSpecialLetterBox, " :SpecialLetters");
+  } if(specialLetterBox.checked === true) {
     isCheckedSpecialLetterBox = true;
-   randomizePassword(specialLettersIndex) 
+
+    randomizerSelection.push(...specialLettersIndex)
     consoleLogBoxCheck(isCheckedSpecialLetterBox, " :SpecialLetters");
   }
 }
@@ -80,12 +84,37 @@ function checkNumbersBox() {
   let isCheckedNumbersBox = false;
   if (!numbersBox.checked === true) {
     isCheckedNumbersBox =false; 
-      consoleLogBoxCheck(isCheckedNumbersBox, " :numbersBox");
-  } else if(numbersBox.checked === true) {
+      return consoleLogBoxCheck(isCheckedNumbersBox, " :numbersBox");
+  } if (numbersBox.checked === true) {
     isCheckedNumbersBox = true;
-   randomizePassword(numberIndex) 
+    randomizerSelection.push(...numberIndex)
     consoleLogBoxCheck(isCheckedNumbersBox, " :numbersBox");
   }
+}
+
+function getPasswordLength(num){
+  const passwordLengthBox = document.querySelector("#passwordLength").value
+  
+ return passwordLengthBox
+  // randomizePassword(passwordLengthBox)
+}
+
+function randomizePassword( ){
+
+const passwordLengthNum = document.querySelector("#passwordLength").value
+console.log(passwordLengthNum ,"num")
+console.log(randomizerSelection ,"randomizerSelection")
+for (var i = 0; i < passwordLengthNum;  i++) {
+ var index = Math.floor(Math.random() * randomizerSelection.length);
+ var randomValue = randomizerSelection[index]
+ console.log("random Value: ", randomValue)
+
+ password.push(randomValue)
+}
+
+ 
+
+return console.log("randomizePassword function: ",randomValue)
 }
 
 function consoleLogBoxCheck (isCheckedUppercaseBox, b){
@@ -95,7 +124,12 @@ function consoleLogBoxCheck (isCheckedUppercaseBox, b){
 }
 //then password will apear in textBox
 function DisplayPassword(){
+
+ //password.replace(/,/g, '')
+  console.log(password , "password in display function")
+ 
   passwordTextArea.textContent = password
   console.log("password: ",password)
 }
 //then display values user chose 
+
