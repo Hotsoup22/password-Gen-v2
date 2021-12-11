@@ -128,7 +128,7 @@ function DisplayPassword(){
  //password.replace(/,/g, '')
   console.log(password , "password in display function")
  
-  passwordTextArea.textContent = password
+  passwordTextArea.textContent = password.join("")
   console.log("password: ",password)
 }
 //then display values user chose 
