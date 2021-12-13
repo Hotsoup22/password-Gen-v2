@@ -8,9 +8,10 @@ const passwordTextArea = document.querySelector("#passwordTextArea")
 
 // when generate password btn is clicked 
 const generatePasswordBtn = document.querySelector("#generatePasswordBtn")
-generatePasswordBtn.addEventListener("click", generatePassword)
+generatePasswordBtn.addEventListener("click" || "onsubmit", generatePassword)
 
 function generatePassword() { 
+  event.preventDefault();
   console.clear();
   passwordTextArea.textContent= ""
   password = [];
@@ -19,20 +20,22 @@ function generatePassword() {
   checkLowercaseBox();
   checkSpecialLetterBox();
   checkNumbersBox();
-  getPasswordLength();
+ 
   randomizePassword()
   DisplayPassword();
   console.log("end of gen-pass function", "password: ",password);
 }
 
-//then it will check which boxes are checked 
+//then it will check which boxes are checked. 
 function checkUppercaseBox() {
   const uppercaseBox = document.querySelector("#uppercaseBox")
   let isCheckedUppercaseBox = false;
   if (!uppercaseBox.checked === true) {
     isCheckedUppercaseBox =false; 
     return  consoleLogBoxCheck(isCheckedUppercaseBox," :Uppercase");
-  } if(uppercaseBox.checked === true) {
+  }
+  // if true then push index to randomizerSelection index.
+   if(uppercaseBox.checked === true) {
     isCheckedUppercaseBox = true;
     randomizerSelection.push(...upperCaseIndex)
     return consoleLogBoxCheck(isCheckedUppercaseBox, " :Uppercase" );
@@ -78,23 +81,20 @@ function checkNumbersBox() {
   }
 }
 
-function getPasswordLength(){
-  const passwordLengthBox = document.querySelector("#passwordLength").value
-  return passwordLengthBox
-  // randomizePassword(passwordLengthBox)
-}
 
+
+// then randomly pick from then randomizer selection Index 
 function randomizePassword( ){
-
-const passwordLengthNum = document.querySelector("#passwordLength").value
-console.log(passwordLengthNum ," :Characters. User desired Password Length")
-console.log(randomizerSelection ,"randomizerSelection")
-for (var i = 0; i < passwordLengthNum;  i++) {
- var index = Math.floor(Math.random() * randomizerSelection.length);
- var randomValue = randomizerSelection[index]
+  //but first check password length
+  const passwordLengthNum = document.querySelector("#passwordLength").value
+  console.log(passwordLengthNum ," :Characters. User desired Password Length")
+  console.log(randomizerSelection ,"randomizerSelection")
+  for (var i = 0; i < passwordLengthNum;  i++) {
+  var index = Math.floor(Math.random() * randomizerSelection.length);
+  var randomValue = randomizerSelection[index]
 //  console.log("random Value: ", randomValue)
- password.push(randomValue)
-}
+  password.push(randomValue)
+  }
 // return console.log("randomizePassword function: ",randomValue)
 }
 
