@@ -105,7 +105,7 @@ function consoleLogBoxCheck (isCheckedUppercaseBox, b){
 //then password will apear in textBox
 function DisplayPassword(){
   // console.log(password , "password in display function")
-  passwordTextArea.textContent = password.join("")
+  passwordTextArea.textContent = password.join("") // takes away spaces and commas 
   // console.log("password: ",password)
 }
 
