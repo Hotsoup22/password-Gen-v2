@@ -1,34 +1,27 @@
 
 # password-Gen-v2
+
 ## Description
+
+basic: html, css, javascript
 
 password generator attempt 2
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-## Table of Contents (Optional)
-If your README is long, add a table of contents to make it easy for users to find what they need.
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-## Installation
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+Motivated by how much help I needed the first attempt at making this password-gen. i thought about giving it another try. using javascript, css (w/ bootsrap), html. generate random passwords based on criteria that is selected. The app run's in the browser and will feature dynamically updated HTML and CSS powered by JavaScript. The Interface also adapts to multiple screen sizes.
+
 ## Usage
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-## Credits
-List your collaborators, if any, with links to their GitHub profiles.
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-If you followed tutorials, include links to those here as well.
+
+- Select desired characters for password.
+- Enter desired Password-Length.
+- Generate Button to start.
+   
+
+<img src="assets/app-screenShot.JPG" alt="app screenshot" width="300"/>
+
+
 ## License
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ---
 🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
 ## Badges
