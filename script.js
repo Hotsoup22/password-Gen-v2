@@ -27,7 +27,7 @@ function generatePassword() {
 }
 
 //then it will check which boxes are checked. 
-function checkUppercaseBox() {
+ checkUppercaseBox = () => {
   const uppercaseBox = document.querySelector("#uppercaseBox")
   let isCheckedUppercaseBox = false;
   if (!uppercaseBox.checked === true) {
@@ -42,7 +42,7 @@ function checkUppercaseBox() {
   }
 }
 
-function checkLowercaseBox() {
+checkLowercaseBox = () => {
   const lowercaseBox = document.querySelector("#lowercaseBox")
   let isCheckedLowercaseBox = false;
   if (!lowercaseBox.checked === true) {
@@ -55,7 +55,7 @@ function checkLowercaseBox() {
   }
 }
 
-function checkSpecialLetterBox() {
+checkSpecialLetterBox = () => {
   const specialLetterBox = document.querySelector("#specialLetterBox")
   let isCheckedSpecialLetterBox = false;
   if (!specialLetterBox.checked === true) {
@@ -68,7 +68,7 @@ function checkSpecialLetterBox() {
   }
 }
 
-function checkNumbersBox() {
+checkNumbersBox = () => {
   const numbersBox = document.querySelector("#numbersBox")
   let isCheckedNumbersBox = false;
   if (!numbersBox.checked === true) {
@@ -84,7 +84,7 @@ function checkNumbersBox() {
 
 
 // then randomly pick from then randomizer selection Index 
-function randomizePassword( ){
+randomizePassword = () => {
   //but first check password length
   const passwordLengthNum = document.querySelector("#passwordLength").value
   console.log(passwordLengthNum ," :Characters. User desired Password Length")
@@ -98,12 +98,12 @@ function randomizePassword( ){
 // return console.log("randomizePassword function: ",randomValue)
 }
 
-function consoleLogBoxCheck (isCheckedUppercaseBox, b){
-   console.log(`${isCheckedUppercaseBox }`+b)
-}
+consoleLogBoxCheck = (isCheckedUppercaseBox, b) => 
+   console.log(`${isCheckedUppercaseBox }`+b);
+
 
 //then password will apear in textBox
-function DisplayPassword(){
+DisplayPassword = () => {
   // console.log(password , "password in display function")
   passwordTextArea.textContent = password.join("") // takes away spaces and commas 
   // console.log("password: ",password)
