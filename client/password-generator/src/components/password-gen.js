@@ -1,5 +1,5 @@
 
-passwordGen = () => {
+export default passwordGen = () => {
 return(
 <div class="card">
 
