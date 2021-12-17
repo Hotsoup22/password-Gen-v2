@@ -19,12 +19,12 @@ function generatePassword() {
   passwordTextArea.textContent= ""
   let password = [];
   let randomizerSelection = [];
-  checkUppercaseBox();
-  checkLowercaseBox();
-  checkSpecialLetterBox();
-  checkNumbersBox();
-  randomizePassword()
-  displayPassword();
+  checkUppercaseBox(randomizerSelection);
+  checkLowercaseBox(randomizerSelection);
+  checkSpecialLetterBox(randomizerSelection);
+  checkNumbersBox(randomizerSelection);
+  randomizePassword(randomizerSelection, password)
+  displayPassword(password);
   console.log("end of gen-pass function", "password: ",password);
 }
 
