@@ -4,9 +4,9 @@ import passwordScript from ".";
 
 
 export default function PasswordGen(){
-const [generate, setGenerate] = useState(false)
- const gen =  useEffect(passwordScript)
-
+    const [generate, setGenerate] = useState(false)
+    const gen =  useEffect(passwordScript)
+    const [defaultValue , setValue]= useState()
 return(
 <div className="card">
 
@@ -56,7 +56,7 @@ return(
                 </ul>
 
                 <div className="password-lengthDiv  mb-3">
-                    <NumericInput  type="number" id="passwordLength" name="passwordLength" value={""} min={0} max={256} className="form-label"  onChange={()=>setGenerate(true, gen)}/>
+                    <input  type="number" id="passwordLength" name="passwordLength" value={defaultValue} min={0} max={256} className="form-label"  onChange={()=>setValue()}/>
                     <label className="form-label" htmlFor="passwordLength">Desired Password Length? </label>
                 </div>
             </form>

@@ -1,4 +1,4 @@
-import PasswordGen from "../components/password-gen/password-gen";
+import PasswordGen from "../components/password-gen/password-gen.js";
 import {useState} from 'react';
 
 export default function HomePage(){
