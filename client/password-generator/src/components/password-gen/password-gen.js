@@ -56,7 +56,7 @@ return(
                 </ul>
 
                 <div className="password-lengthDiv  mb-3">
-                    <input type="number" id="passwordLength" name="passwordLength" value="" min="0" max="256" className="form-label" />
+                    <NumericInput  type="number" id="passwordLength" name="passwordLength" value={""} min={0} max={256} className="form-label"  onChange={()=>setGenerate(true, gen)}/>
                     <label className="form-label" htmlFor="passwordLength">Desired Password Length? </label>
                 </div>
             </form>
