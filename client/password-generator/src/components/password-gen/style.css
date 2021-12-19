@@ -1,0 +1,13 @@
+body{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.521);
+}
+.card{
+    margin-top: 10%;
+}
+ul.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
