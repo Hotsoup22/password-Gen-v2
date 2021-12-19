@@ -1,15 +1,17 @@
-import PasswordGen from "../components/password-gen/password-gen.js";
-import {useState} from 'react';
+import PasswordGen from "../components/Password-Gen/password-gen.js";
 
+import Header from '../components/Header/Header'
+
+import Footer from '../components/Footer/Footer'
 export default function HomePage(){
-    // const [Page, setPage]= useState("PasswordGen");
-    // const pageChange = (page) => setPage(page);
-    // const renderPage = () => {
+ 
 
       return(
-        
+        <div className="container">
+        <Header/>
         <PasswordGen/>
-
+        <Footer/>
+        </div>
 
       )
     // }
