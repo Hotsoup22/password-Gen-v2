@@ -12,7 +12,7 @@ return(
 
     <div className="card-header">
         <header>
-            <h1>Password Generator</h1>
+            <h1 className='appTitle'>Password Generator</h1>
         </header>
     </div>
 
