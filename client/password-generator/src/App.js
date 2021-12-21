@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import HomePage from './pages/HomePage';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 function App() {
   return (
     <HomePage/>
