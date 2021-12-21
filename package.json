@@ -1,0 +1,23 @@
+{
+  "name": "password-gen-v2",
+  "version": "1.0.0",
+  "description": "basic: html, css, javascript",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hotsoup42/password-Gen-v2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hotsoup42/password-Gen-v2/issues"
+  },
+  "homepage": "https://github.com/hotsoup42/password-Gen-v2#readme",
+  "devDependencies": {
+    "concurrently": "^6.4.0"
+  }
+}

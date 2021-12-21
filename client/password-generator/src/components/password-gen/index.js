@@ -1,3 +1,6 @@
+export default function passwordScript(){
+ console.log("index.js script is mounted")
+
 const upperCaseIndex = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 const lowerCaseIndex = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 const specialLettersIndex =  ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '.', '~', '|', '<', '>', '=', '-', '_', '/', ':', ';', '?', '[', ']', '{', '}', '~'];
@@ -8,26 +11,39 @@ const passwordTextArea = document.querySelector("#passwordTextArea")
 
 // when generate password btn is clicked 
 const generatePasswordBtn = document.querySelector("#generatePasswordBtn")
-generatePasswordBtn.addEventListener("click" || "onsubmit", generatePassword)
+generatePasswordBtn.addEventListener("click" , generatePassword)
+
+// const passwordGenForm = document.querySelector(".password-gen-form")
+// passwordGenForm.addEventListener("onSubmit" ,  generatePassword)
+
+const passwordGenForm = document.querySelector(".password-lengthDiv ");
+passwordGenForm.addEventListener("keydown", function(event) {
+  if (!event.keyCode === 13) {
+    return
+  }
+    if (event.keyCode === 13) {
+    event.preventDefault();
+    generatePassword();
+  }
+});
 
 function generatePassword() { 
-  event.preventDefault();
+
   console.clear();
   passwordTextArea.textContent= ""
-  password = [];
-  randomizerSelection = [];
-  checkUppercaseBox();
-  checkLowercaseBox();
-  checkSpecialLetterBox();
-  checkNumbersBox();
- 
-  randomizePassword()
-  DisplayPassword();
+  let password = [];
+  let randomizerSelection = [];
+  checkUppercaseBox(randomizerSelection);
+  checkLowercaseBox(randomizerSelection);
+  checkSpecialLetterBox(randomizerSelection);
+  checkNumbersBox(randomizerSelection);
+  randomizePassword(randomizerSelection, password)
+  displayPassword(password);
   console.log("end of gen-pass function", "password: ",password);
 }
 
 //then it will check which boxes are checked. 
-function checkUppercaseBox() {
+function checkUppercaseBox(randomizerSelection) {
   const uppercaseBox = document.querySelector("#uppercaseBox")
   let isCheckedUppercaseBox = false;
   if (!uppercaseBox.checked === true) {
@@ -42,7 +58,7 @@ function checkUppercaseBox() {
   }
 }
 
-function checkLowercaseBox() {
+function checkLowercaseBox(randomizerSelection){
   const lowercaseBox = document.querySelector("#lowercaseBox")
   let isCheckedLowercaseBox = false;
   if (!lowercaseBox.checked === true) {
@@ -55,7 +71,7 @@ function checkLowercaseBox() {
   }
 }
 
-function checkSpecialLetterBox() {
+function checkSpecialLetterBox (randomizerSelection){
   const specialLetterBox = document.querySelector("#specialLetterBox")
   let isCheckedSpecialLetterBox = false;
   if (!specialLetterBox.checked === true) {
@@ -68,7 +84,7 @@ function checkSpecialLetterBox() {
   }
 }
 
-function checkNumbersBox() {
+function checkNumbersBox(randomizerSelection){
   const numbersBox = document.querySelector("#numbersBox")
   let isCheckedNumbersBox = false;
   if (!numbersBox.checked === true) {
@@ -84,7 +100,7 @@ function checkNumbersBox() {
 
 
 // then randomly pick from then randomizer selection Index 
-function randomizePassword( ){
+function randomizePassword(randomizerSelection, password) {
   //but first check password length
   const passwordLengthNum = document.querySelector("#passwordLength").value
   console.log(passwordLengthNum ," :Characters. User desired Password Length")
@@ -98,15 +114,17 @@ function randomizePassword( ){
 // return console.log("randomizePassword function: ",randomValue)
 }
 
-function consoleLogBoxCheck (isCheckedUppercaseBox, b){
+function consoleLogBoxCheck(isCheckedUppercaseBox, b){ 
    console.log(`${isCheckedUppercaseBox }`+b)
-}
+  };
+
 
 //then password will apear in textBox
-function DisplayPassword(){
+function displayPassword (password) {
   // console.log(password , "password in display function")
-  passwordTextArea.textContent = password.join("")
+  passwordTextArea.textContent = password.join("") // takes away spaces and commas 
   // console.log("password: ",password)
 }
 
 
+}
