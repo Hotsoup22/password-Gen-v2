@@ -11,10 +11,24 @@ const passwordTextArea = document.querySelector("#passwordTextArea")
 
 // when generate password btn is clicked 
 const generatePasswordBtn = document.querySelector("#generatePasswordBtn")
-generatePasswordBtn.addEventListener("click" || "onsubmit", generatePassword)
+generatePasswordBtn.addEventListener("click" , generatePassword)
+
+// const passwordGenForm = document.querySelector(".password-gen-form")
+// passwordGenForm.addEventListener("onSubmit" ,  generatePassword)
+
+const passwordGenForm = document.querySelector(".password-lengthDiv ");
+passwordGenForm.addEventListener("keydown", function(event) {
+  if (!event.keyCode === 13) {
+    return
+  }
+    if (event.keyCode === 13) {
+    event.preventDefault();
+    generatePassword();
+  }
+});
 
 function generatePassword() { 
-  
+
   console.clear();
   passwordTextArea.textContent= ""
   let password = [];
