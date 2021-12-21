@@ -25,7 +25,7 @@ return(
         <br></br>
 
         <div className="checklist">
-            <form onChange={()=>setGenerate(true, gen)}>
+            <form className='password-gen-form' onChange={()=>setGenerate(true, gen)}>
                 <ul className="no-bullets">
 
                     <li>
