@@ -4,9 +4,9 @@ export default function Footer(){
     return (
    
         <div className="footer-copyright text-center py-3">
-        <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} MIT 
-        </MDBContainer>
+        <MDBFooter fluid>
+         {new Date().getFullYear()} MIT 
+        </MDBFooter>
       </div>
         
     )
