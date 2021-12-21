@@ -1,12 +1,11 @@
-import NavbarComponent from "../Nav/Nav";
-
+// import NavbarComponent from "../Nav/Nav";
+import  './headerStyle.css'
 export default function Header(){
 
     return(
         <header>
-            <h1>Welcome</h1>
-       
-            <NavbarComponent/>
+           
+            {/*<NavbarComponent/> */}
         </header>
     )
 }
