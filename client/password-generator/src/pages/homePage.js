@@ -1,4 +1,4 @@
-import PasswordGen from "../components/Password-Gen/password-gen.js";
+import PasswordGen from "../components/password-gen/password-gen";
 
 import Header from '../components/Header/Header'
 import "./assets/homepageStyle.css";
