@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import HomePage from './pages/HomePage';
+import HomePage from './pages/homePage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 function App() {
