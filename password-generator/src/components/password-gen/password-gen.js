@@ -1,14 +1,17 @@
-import './style.css'
+
 import { useEffect, useState} from "react";
 import passwordScript from ".";
-
+import Card from 'react-bootstrap/Card'
+import './style.css'
 
 export default function PasswordGen(){
     const [generate, setGenerate] = useState(false)
     const gen =  useEffect(passwordScript)
     const [defaultValue , setValue]= useState()
 return(
-<div className="card">
+<Card 
+ bg={'dark'}
+ text={'white'}>
 
     <div className="card-header">
         <header>
@@ -24,13 +27,13 @@ return(
 
         <br></br>
 
-        <div className="checklist">
-            <form className='password-gen-form' onChange={()=>setGenerate(true, gen)}>
-                <ul className="no-bullets">
+        <div className="checklist" >
+            <form className='password-gen-form' onChange={()=>setGenerate(true, gen)} >
+                <ul className="no-bullets" >
 
                     <li>
                         <input type="checkbox" id="uppercaseBox" name="uppercaseBox" value="" className="form-check-input" />
-                        <label className="form-label" htmlFor="uppercaseBox">Uppercase Letters? A-Z</label>
+                        <label className="form-label" htmlFor="uppercaseBox" >Uppercase Letters? A-Z</label>
                     </li>
 
                     <br></br>
@@ -63,8 +66,8 @@ return(
         </div>
     </div>
 
-    <div className="card-footer">
-        <button id="generatePasswordBtn" className=" btn-dark btn">
+    <div className="card-footer ">
+        <button id="generatePasswordBtn" className=" btn-light btn">
             Generate Password
         </button>
     </div>
@@ -72,5 +75,5 @@ return(
     <div>
         <script src=".index"></script>
     </div>
-</div>
+</Card>
 )};
