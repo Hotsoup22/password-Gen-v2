@@ -1,18 +1,29 @@
 body{
     display: flex;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.521);
+   
 }
 .card{
     margin-top: 10%;
 }
 ul.no-bullets {
-  list-style-type: none; /* Remove bullets */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margins */
+  list-style-type: none; /* Remove bullets from checkbox */
+  padding: 0; /* Remove padding checkbox */
+  margin: 0; /* Remove margins checkbox */
+  
 }
 
 .appTitle{
-  font-family: fantasy;
+  font-family: 'fantasy';
   font-weight: bold;
+}
+
+
+/* is acutally located in App.css */
+.form-label{
+  color:white;
+  margin-left:5px;
+}
+input{
+  background-color: #282c34;
 }
