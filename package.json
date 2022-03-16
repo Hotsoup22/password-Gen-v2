@@ -20,5 +20,8 @@
   "homepage": "https://github.com/hotsoup42/password-Gen-v2#readme",
   "devDependencies": {
     "concurrently": "^6.4.0"
+  },
+  "dependencies": {
+    "react-scripts": "^5.0.0"
   }
 }
