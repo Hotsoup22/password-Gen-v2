@@ -7,12 +7,9 @@
  
 ## Usage
 
-    check boxes for what you want in the password.
-
-- Upper case charcters?
-- Lower case characters?
-- Special characters? Example:(@#$)
-- select password length
+  - open link in browser
+  - check boxes for desired password content and length.
+  
 ---
     push "Generate password"
     
